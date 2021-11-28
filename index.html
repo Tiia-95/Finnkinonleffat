@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Leffasivu</title>
 </head>
 
@@ -11,17 +15,19 @@
 
 <body>
     
-    <h1>Leffasivu</h1>
+    <div class="page-header">
+        <h1>Leffasivu</h1>
+    </div>
 
-    <div id="kaikki">
-        <div class="dropdown">
+    <div id="kaikki" class="row align-items-center justify-content-center">
+        <div class="col-sm-3 dropdown">
             <input type="button" class="dropbtn" value="Valitse leffateatteri"/>
-            <div class="dropdown-content" id="lista">
+                <div class="dropdown-content" id="lista">
                 
             </div>
         </div>
 
-        <div class="laatikko">
+        <div class="col-sm-9 laatikko">
             <h2 id="nimi"></h2>
 
             <div id="leffalaatikko">
