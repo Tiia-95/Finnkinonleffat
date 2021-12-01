@@ -5,13 +5,9 @@ let yksittäinen;
 
 //Tässä funktiossa ladataan leffateattereiden tiedot sivustoa ladattaessa
 function leffateattereiden_lataus() {
-    var leffat = new XMLHttpRequest();
-    
-    leffat.open("GET", "https://www.finnkino.fi/xml/Schedule/", true);
-    leffat.send();
-    leffat.onreadystatechange = function() {
-        if(leffat.readyState == 4 && leffat.status == 200) {
-            elokuvat = leffat.responseXML;
+    $(document).ready(function(){
+        $.get("https://www.finnkino.fi/xml/Schedule/", function(elokuvat, status){
+            //alert("Data: " + elokuvat + "\nStatus: " + status);
             yksittäinen = elokuvat.getElementsByTagName("Show");
             yht = yksittäinen.length;
 
@@ -19,21 +15,22 @@ function leffateattereiden_lataus() {
                 if(true != leffalat.includes(yksittäinen[i].getElementsByTagName("TheatreID")[0].childNodes[0].nodeValue)){
                     leffalat.push(yksittäinen[i].getElementsByTagName("TheatreID")[0].childNodes[0].nodeValue);
                     uusiElementti(yksittäinen[i].getElementsByTagName("TheatreID")[0].childNodes[0].nodeValue, yksittäinen[i].getElementsByTagName("Theatre")[0].childNodes[0].nodeValue);
+                
+                    }
                 }
-            }
-        }
+
+          });
+      });
+
     }
-}
+
 
 //Yhden leffateatterin nimi kerrallaan listataan alasvetovalikkoon ja luodaan niihin napit, josta voi valita kyseisen leffateatterin
 function uusiElementti(id, nimi) {
-    var a = document.createElement("a");
-    a.id = id;
-    var inputValue = nimi;
-    var t = document.createTextNode(inputValue);
-    a.appendChild(t);
-    document.getElementById("lista").appendChild(a);
-    document.getElementById(a.id).onclick = function() {valinta(a.id, inputValue)};
+    var a = $("<a></a>").text(nimi);
+    $(a).attr("id", id);
+    $("#lista").append(a);
+    $(a).click(function() {valinta(id, nimi)});
 }
 
 //Tässä muodostetaan leffalistaus sivulle valitusta leffateatterista
