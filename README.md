@@ -10,4 +10,4 @@ Projektikansio sisältää neljä eri tiedostoa, jotka ovat index.HTML, Leffasiv
 Vasemmasta reunasta alasvetovalikosta valitaan leffateatteri tai leffan. Tämän jälkeen sivusto lataa kyseissä leffateatterissa menevät leffat sivulle tai kyseisestä leffasta tietoa. Leffat näkyvät alkamisaja mukaan aikajärjestyksessä leffateatterisivulla. Leffateatterin tai leffan voi valita uudelleen ilman nollaamista ja sivu näyttää vain sen leffateatterin menevät leffat tai leffan tiedot, joka on valittu viimeiseksi.
 
 ## Netlify-linkki
-
+https://xenodochial-boyd-7ab48b.netlify.app/
