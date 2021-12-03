@@ -19,7 +19,7 @@
   .dropdown {
     position: relative;
     display: inline-block;
-    
+    padding: 30px;
     text-align: center;
   }
   
@@ -31,7 +31,7 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    
+    ;
   }
   
   .dropdown-content a {
@@ -51,7 +51,7 @@
   
 .laatikko {
   float: right;
-  
+  padding: 30px;
 }
 
 #kaikki {
@@ -60,5 +60,6 @@
 
 h2 {
   text-align: center;
+  padding: 20px;
 }
 
